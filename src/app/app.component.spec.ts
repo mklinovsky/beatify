@@ -1,11 +1,16 @@
+import { Component } from '@angular/core';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+
+@Component({selector: 'btf-header', template: ''})
+class HeaderStubComponent {}
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderStubComponent
       ],
     }).compileComponents();
   }));
