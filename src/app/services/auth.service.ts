@@ -15,6 +15,6 @@ export class AuthService {
   }
 
   private createQueryString() {
-    return `?client_id=${this.clientId}&response_type=token&redirect_uri=${encodeURIComponent('http://localhost:4200/authorize')}`;
+    return `?client_id=${this.clientId}&response_type=token&redirect_uri=${encodeURIComponent('http://localhost:4200/authorize/')}`;
   }
 }
