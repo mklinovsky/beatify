@@ -1,10 +1,7 @@
-import { Component } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
-
-@Component({selector: 'mat-toolbar', template: ''})
-class MatToolbarStubComponent {}
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -13,9 +10,9 @@ describe('HeaderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        HeaderComponent,
-        MatToolbarStubComponent
-       ]
+        HeaderComponent
+      ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));
@@ -28,5 +25,15 @@ describe('HeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should contain app title', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.title').textContent).toEqual('beatify');
+  });
+
+  it('should contain login button', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('button').textContent).toEqual('Login');
   });
 });
