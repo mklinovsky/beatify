@@ -24,7 +24,7 @@ export class AuthService {
       return true;
     }
 
-    return sessionStorage.getItem(this.tokenStorageKey);
+    return !!sessionStorage.getItem(this.tokenStorageKey);
   }
 
   logout() {
@@ -33,7 +33,7 @@ export class AuthService {
   }
 
   private createQueryString() {
-    return `?client_id=${environment.spotify.clientId}&response_type=token&redirect_uri=${encodeURIComponent(environment.spotify.redirectUri)}`;
+    return `client_id=${environment.spotify.clientId}&response_type=token&redirect_uri=${encodeURIComponent(environment.spotify.redirectUri)}`;
   }
 
   private createAuthorizeUrl() {
