@@ -8,6 +8,4 @@ export class SpotifyApiService {
   constructor(
     private http: HttpClient
   ) { }
-
-
 }

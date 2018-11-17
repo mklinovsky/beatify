@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
+import { SpotifyAuthService } from '../../services/spotify-auth.service';
 
 @Component({
   selector: 'btf-authorize',
@@ -11,13 +12,15 @@ export class AuthorizeComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private auth: AuthService
+    private auth: AuthService,
+    private spotifyAuth: SpotifyAuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    console.log(this.route.snapshot.fragment);
+    const fragment = this.route.snapshot.fragment;
+    this.auth.storeToken(this.spotifyAuth.getTokenFromFragment(fragment));
+
+    this.router.navigate(['/']);
   }
-
-  
-
 }
