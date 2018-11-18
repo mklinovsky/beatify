@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'btf-header',
@@ -9,13 +10,15 @@ import { AuthService } from '../../core/auth.service';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
 
-  onLoginButtonClick() {
-    this.auth.authorize();
+  onLogoutButtonClick() {
+    this.auth.logout();
+    this.router.navigate(['/login']);
   }
 }

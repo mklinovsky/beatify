@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+<div class="login">
+  <mat-card>
+    <h1>beatify</h1>
+    <p>Search for tracks with specific BPM and create playlists from it.</p>
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="loading"
+      (click)="onLoginButtonClick()"
+    >
+      Login to spotify    
+    </button>
+  </mat-card>
+</div>

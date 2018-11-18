@@ -4,12 +4,14 @@ import { MaterialModule } from '../layout/material.module';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { AuthorizeComponent } from './authorize/authorize.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     AuthorizeComponent,
-    LoginComponent
+    LoginComponent,
+    MainPageComponent
   ],
   imports: [
     CommonModule,
