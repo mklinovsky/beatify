@@ -38,6 +38,6 @@ describe('HeaderComponent', () => {
 
   it('should contain logout button', () => {
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('button').textContent).toEqual('Logout');
+    expect(compiled.querySelector('button').textContent).toContain('Logout');
   });
 });

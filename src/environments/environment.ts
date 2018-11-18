@@ -7,7 +7,8 @@ export const environment = {
   spotify: {
     clientId: 'ff54e03713b04ead82bef3d411efd0c7',
     redirectUri: 'http://localhost:4200/authorize/',
-    authorizeUrl: 'https://accounts.spotify.com/authorize'
+    authorizeUrl: 'https://accounts.spotify.com/authorize',
+    apiEndpoint: 'https://api.spotify.com/v1/'
   }
 };
 

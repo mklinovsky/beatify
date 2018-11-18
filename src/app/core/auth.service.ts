@@ -27,6 +27,14 @@ export class AuthService {
     return !!sessionStorage.getItem(this.tokenStorageKey);
   }
 
+  getAccessToken() {
+    if (this.token) {
+      return this.token;
+    }
+
+    return sessionStorage.getItem(this.tokenStorageKey);
+  }
+
   logout() {
     this.token = '';
     sessionStorage.removeItem(this.tokenStorageKey);

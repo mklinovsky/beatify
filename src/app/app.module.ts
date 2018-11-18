@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { ComponentsModule } from './components/components.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
-    ComponentsModule
+    ComponentsModule    
   ],
   bootstrap: [
     AppComponent
