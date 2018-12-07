@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchContainerComponent } from './search-container.component';
@@ -12,6 +13,9 @@ describe('SearchContainerComponent', () => {
       declarations: [ SearchContainerComponent ],
       schemas: [
         NO_ERRORS_SCHEMA
+      ],
+      imports: [
+        HttpClientTestingModule
       ]
     })
     .compileComponents();
