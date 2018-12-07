@@ -6,7 +6,7 @@ let service: AuthService;
 
 describe('AuthService', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({})
+    TestBed.configureTestingModule({});
     service = TestBed.get(AuthService);
   });
 

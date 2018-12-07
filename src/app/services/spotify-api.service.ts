@@ -16,6 +16,6 @@ export class SpotifyApiService {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.auth.getAccessToken()}`
       })
-    }
+    };
   }
 }

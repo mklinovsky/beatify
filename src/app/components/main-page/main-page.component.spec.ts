@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainPageComponent } from './main-page.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('MainPageComponent', () => {
   let component: MainPageComponent;
@@ -8,7 +9,12 @@ describe('MainPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainPageComponent ]
+      declarations: [
+        MainPageComponent
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     })
     .compileComponents();
   }));

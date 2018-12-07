@@ -22,7 +22,7 @@ import { PlaylistContainerComponent } from './playlist-container/playlist-contai
     MaterialModule
   ],
   exports: [
-    HeaderComponent
+    // HeaderComponent
   ]
 })
 export class ComponentsModule { }
