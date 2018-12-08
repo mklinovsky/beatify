@@ -17,13 +17,11 @@ export class SearchContainerComponent implements OnInit {
 
   onChange(e) {
     const value = e.target.value;
-    // if (value.length > 2) {
-    //   this.spotifyApi.search(value)
-    //     .subscribe((result) => {
-    //       console.log(result);
-    //     });
-    // }
-
-    console.log(this.spotifyApi);
+    if (value.length > 2) {
+      this.spotifyApi.search(value)
+        .subscribe((result) => {
+          console.log(result);
+        });
+    }
   }
 }

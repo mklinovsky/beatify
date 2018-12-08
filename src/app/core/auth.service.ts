@@ -41,8 +41,11 @@ export class AuthService {
   }
 
   private createQueryString() {
-    return `client_id=${environment.spotify.clientId}
-      &response_type=token&redirect_uri=${encodeURIComponent(environment.spotify.redirectUri)}`;
+    const clientId = `client_id=${environment.spotify.clientId}`;
+    const responseType = 'response_type=token';
+    const redirectUri = `redirect_uri=${encodeURIComponent(environment.spotify.redirectUri)}`;
+
+    return `${clientId}&${responseType}&${redirectUri}`;
   }
 
   private createAuthorizeUrl() {
