@@ -5,8 +5,7 @@ import { SpotifyAuthService } from '../../services/spotify-auth.service';
 
 @Component({
   selector: 'btf-authorize',
-  templateUrl: './authorize.component.html',
-  styleUrls: ['./authorize.component.scss']
+  template: '',
 })
 export class AuthorizeComponent implements OnInit {
 

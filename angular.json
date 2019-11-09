@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "beatify"
+  "defaultProject": "beatify",
+  "cli": {
+    "defaultCollection": "@ngxs/schematics"
+  }
 }
