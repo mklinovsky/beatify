@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { SearchContainerComponent } from './search-container/search-container.component';
 import { PlaylistContainerComponent } from './playlist-container/playlist-container.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TracksListComponent } from './tracks-list/tracks-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     MainPageComponent,
     SearchContainerComponent,
-    PlaylistContainerComponent
+    PlaylistContainerComponent,
+    TracksListComponent
   ],
   imports: [
     CommonModule,
