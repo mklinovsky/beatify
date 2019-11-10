@@ -1,16 +1,17 @@
-<mat-card>
+<mat-card [formGroup]="form">
   <mat-form-field>
-    <input
-      matInput
-      color="accent"
-      placeholder="Search"
-      (change)="onChange($event)"
-    >
+      <input
+        matInput
+        color="accent"
+        placeholder="Search"
+        formControlName="searchQuery"
+      >
   </mat-form-field>
   <mat-slider
     thumbLabel
     min="50"
     max="250"
     value="180"
+    formControlName="tempo"
   ></mat-slider>
 </mat-card>

@@ -32,3 +32,8 @@ export interface Track {
   tempo: number;
   duration: number;
 }
+
+export interface SearchForm {
+  query: string;
+  tempo: number;
+}

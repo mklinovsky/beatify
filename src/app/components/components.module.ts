@@ -7,6 +7,7 @@ import { AuthorizeComponent } from './authorize/authorize.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { SearchContainerComponent } from './search-container/search-container.component';
 import { PlaylistContainerComponent } from './playlist-container/playlist-container.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PlaylistContainerComponent } from './playlist-container/playlist-contai
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   exports: [
     // HeaderComponent
