@@ -2,7 +2,7 @@ import { switchMap, catchError } from 'rxjs/operators';
 import { SpotifyApiService } from './../services/spotify-api.service';
 import { Track } from './../beatify.types';
 import { State, Action, Selector, StateContext } from '@ngxs/store';
-import { SearchCriteriaChanged, SearchSuccess, SearchError } from './beatify.actions';
+import { Search, SearchSuccess, SearchError } from './beatify.actions';
 import produce from 'immer';
 import { forkJoin } from 'rxjs';
 
@@ -28,12 +28,22 @@ export class BeatifyState {
   constructor(private apiService: SpotifyApiService) {}
 
   @Selector()
-  static getState(state: BeatifyStateModel) {
-    return state;
+  static getTracks(state: BeatifyStateModel) {
+    return state.tracks;
   }
 
-  @Action(SearchCriteriaChanged)
-  searchCriteriaChanged(ctx: StateContext<BeatifyStateModel>, action: SearchCriteriaChanged) {
+  @Selector()
+  static getLoading(state: BeatifyStateModel) {
+    return state.loading;
+  }
+
+  @Selector()
+  static getError(state: BeatifyStateModel) {
+    return state.error;
+  }
+
+  @Action(Search)
+  searchCriteriaChanged(ctx: StateContext<BeatifyStateModel>, action: Search) {
     ctx.setState(
       produce(ctx.getState(), draft => {
         draft.searchQuery = action.searchQuery;
@@ -44,11 +54,11 @@ export class BeatifyState {
 
     const state = ctx.getState();
 
-    // return this.apiService.search(state.searchQuery, state.tempo)
-    //   .pipe(
-    //     switchMap((searchResult) => ctx.dispatch(new SearchSuccess(searchResult))),
-    //     catchError(error => ctx.dispatch(new SearchError(error))),
-    //   );
+    return this.apiService.search(state.searchQuery, state.tempo)
+      .pipe(
+        switchMap((searchResult) => ctx.dispatch(new SearchSuccess(searchResult))),
+        catchError(error => ctx.dispatch(new SearchError(error))),
+      );
   }
 
   @Action(SearchSuccess)

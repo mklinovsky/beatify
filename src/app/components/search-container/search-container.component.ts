@@ -1,6 +1,5 @@
-import { SpotifyApiService } from './../../services/spotify-api.service';
+import { BeatifyService } from './../../services/beatify.service';
 import { Component, OnInit } from '@angular/core';
-import { switchMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'btf-search-container',
@@ -8,9 +7,10 @@ import { switchMap, map } from 'rxjs/operators';
   styleUrls: ['./search-container.component.scss']
 })
 export class SearchContainerComponent implements OnInit {
+  tracks$ = this.beatifyService.tracks$;
 
   constructor(
-    private spotifyApi: SpotifyApiService
+    private beatifyService: BeatifyService
   ) { }
 
   ngOnInit() {
@@ -18,11 +18,6 @@ export class SearchContainerComponent implements OnInit {
 
   onChange(e) {
     const value = e.target.value;
-    if (value.length > 2) {
-      this.spotifyApi.search(value, 100)
-        .subscribe((result) => {
-          console.log(result);
-        });
-    }
+    this.beatifyService.search(value, 100);
   }
 }

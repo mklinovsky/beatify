@@ -5,8 +5,8 @@ export class Login {
   static readonly type = '[Beatify] Login';
 }
 
-export class SearchCriteriaChanged {
-  static readonly type = '[Beatify] SearchCriteriaChanged';
+export class Search {
+  static readonly type = '[Beatify] Search';
   constructor(public searchQuery: string, public tempo: number) {}
 }
 
