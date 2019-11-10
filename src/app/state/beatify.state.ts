@@ -17,7 +17,7 @@ export interface BeatifyStateModel {
 @State<BeatifyStateModel>({
   name: 'beatify',
   defaults: {
-    searchQuery: '',
+    searchQuery: null,
     tempo: 180,
     tracks: [],
     loading: false,
@@ -26,6 +26,11 @@ export interface BeatifyStateModel {
 })
 export class BeatifyState {
   constructor(private apiService: SpotifyApiService) {}
+
+  @Selector()
+  static getState(state: BeatifyStateModel) {
+    return state;
+  }
 
   @Selector()
   static getTracks(state: BeatifyStateModel) {
