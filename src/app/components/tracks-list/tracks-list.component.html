@@ -1,11 +1,10 @@
-<mat-card>
+<div>
   <mat-progress-bar
-    *ngIf="loading$ | async"
+    *ngIf="loading"
     mode="indeterminate"
   ></mat-progress-bar>
-  <ul>
-    <li *ngFor="let track of tracks$ | async">
-      {{ track.name }} - {{ track.artist }}
-    </li>
-  </ul>
-</mat-card>
+    <btf-track
+      *ngFor="let track of tracks"
+      [track]="track"
+    ></btf-track>
+</div>

@@ -1,4 +1,3 @@
-import { BeatifyService } from './../../services/beatify.service';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Track } from 'src/app/beatify.types';
 
@@ -9,11 +8,10 @@ import { Track } from 'src/app/beatify.types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TracksListComponent implements OnInit {
-  tracks$ = this.beatifyService.tracks$;
-  loading$ = this.beatifyService.loading$;
+  @Input() tracks: Track[];
+  @Input() loading: boolean;
 
-  constructor(private beatifyService: BeatifyService) {}
+  ngOnInit(): void {
 
-  ngOnInit() {
   }
 }

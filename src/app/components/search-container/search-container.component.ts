@@ -10,6 +10,9 @@ import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchContainerComponent implements OnInit {
+  tracks$ = this.beatifyService.tracks$;
+  loading$ = this.beatifyService.loading$;
+
   form = new FormGroup({
     searchQuery: new FormControl(''),
     tempo: new FormControl(100),

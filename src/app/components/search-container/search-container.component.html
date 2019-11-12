@@ -1,11 +1,12 @@
 <mat-card [formGroup]="form">
   <mat-form-field>
-      <input
-        matInput
-        color="accent"
-        placeholder="Search"
-        formControlName="searchQuery"
-      >
+    <input
+      matInput
+      color="accent"
+      placeholder="Search"
+      autocomplete="off"
+      formControlName="searchQuery"
+    >
   </mat-form-field>
   <mat-slider
     thumbLabel
@@ -16,4 +17,7 @@
   ></mat-slider>
 </mat-card>
 
-<btf-tracks-list></btf-tracks-list>
+<btf-tracks-list
+  [tracks]="tracks$ | async"
+  [loading]="loading$ | async"
+></btf-tracks-list>
